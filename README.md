@@ -24,21 +24,27 @@ header \*.h srcs \*.c, objs \*.o
 
 
 
-## Tree
+## Final projet tree
 
 ```
 .
 +-- headers
 │   \-- bar.h
++-- Help
+│   \-- explain.md
 +-- Makefile
 +-- objs
 │   +-- foo.o
 │   \-- main.o
 +-- program
 +-- README.md
-\-- srcs
-    +-- foo.c
-    \-- main.c
++-- srcs
+│   +-- foo.c
+│   +-- foo.o
+│   +-- main.c
+│   \-- main.o
+\-- Subjets
+    \-- en.subject.pdf
 ```
 
 ### Display tree
