@@ -6,7 +6,7 @@ a mould for projet
 I would like create a mould 
 for my next projets. With 3 directories,
 headers, srcs and objs. Each folder with different type of file.
-header \*.h srcs \*c, objs \*.o
+header \*.h srcs \*.c, objs \*.o
 
 ### Example
 
