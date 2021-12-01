@@ -1,4 +1,5 @@
 # cake-mould
+
 a mould for projet
 
 ## Main goal...
@@ -6,7 +7,10 @@ a mould for projet
 I would like create a mould 
 for my next projets. With 3 directories,
 headers, srcs and objs. Each folder with different type of file.
-header \*.h srcs \*.c, objs \*.o
+* header \*.h
+* srcs \*.c
+* objs \*.o
+
 
 ### Example
 
@@ -21,7 +25,6 @@ header \*.h srcs \*.c, objs \*.o
     +-- foo.c
     \-- main.c
 ```
-
 
 
 ## Final projet tree
@@ -47,6 +50,7 @@ header \*.h srcs \*.c, objs \*.o
     \-- en.subject.pdf
 ```
 
-### Display tree
+
+## Display tree
 
 ```tree -d | sed 's/├/\+/g; s/─/-/g; s/└/\\/g'```
