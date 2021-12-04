@@ -16,14 +16,14 @@ headers, srcs and objs. Each folder with different type of file.
 
 ```
 .
-+-- headers
-│   \-- bar.h
-+-- objs
-│   +-- foo.o
-│   \-- main.o
-\-- srcs
-    +-- foo.c
-    \-- main.c
+├── headers
+│   └── bar.h
+├── objs
+│   ├── foo.o
+│   └── main.o
+└── srcs
+    ├── foo.c
+    └── main.c
 ```
 
 
@@ -31,26 +31,20 @@ headers, srcs and objs. Each folder with different type of file.
 
 ```
 .
-+-- headers
-│   \-- bar.h
-+-- Help
-│   \-- explain.md
-+-- Makefile
-+-- objs
-│   +-- foo.o
-│   \-- main.o
-+-- program
-+-- README.md
-+-- srcs
-│   +-- foo.c
-│   +-- foo.o
-│   +-- main.c
-│   \-- main.o
-\-- Subjets
-    \-- en.subject.pdf
+├── headers
+│   └── bar.h
+├── Makefile
+├── objs
+│   ├── foo.o
+│   └── main.o
+├── program
+├── README.md
+└── srcs
+    ├── foo.c
+    └── main.c
 ```
 
 
-## Display tree
+## Display ascii tree
 
-```tree -d | sed 's/├/\+/g; s/─/-/g; s/└/\\/g'```
+```tree | sed 's/├/\+/g; s/─/-/g; s/└/\\/g'```
