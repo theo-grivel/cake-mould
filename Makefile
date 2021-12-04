@@ -1,11 +1,11 @@
 DIR_SRC	=	./srcs
 DIR_OBJ	=	./objs
-DIR_HEADER	=	./headers/
+DIR_HEA	=	./headers/
 
 SRCS	=	${DIR_SRC}/main.c \
 			${DIR_SRC}/foo.c
 
-OBJS	=	${SRCS:.c=.o}
+OBJS	=	${addprefix ${DIR_OBJ}/, ${notdir ${SRCS:.c=.o}}}
 
 NAME	=	program	
 
@@ -14,14 +14,21 @@ FLAGS	=	-Wall -Wextra -Werror
 
 RM		=	rm -f
 
-.c.o:
-	${CC} ${FLAGS} -I ${DIR_HEADER} -c $< -o  ${addprefix ${DIR_OBJ}/, ${notdir ${<:.c=.o}}}
+vpath %.c ${DIR_SRC}
 
-all:	${OBJS}
-	${CC} ${FLAGS} -o ${NAME} ${addprefix ${DIR_OBJ}/, ${notdir ${OBJS}}}
+all : ${NAME}
+
+${DIR_OBJ}/%.o : %.c | ${DIR_OBJ}
+	${CC} ${CFLAGS} -o $@ -I ${DIR_HEADER}  -c $^
+
+${NAME}:	${OBJS}
+	${CC} ${FLAGS} -o ${NAME}  ${OBJS}
+
+${DIR_OBJ} :
+	@mkdir -p ${DIR_OBJ}
 
 clean:
-	${RM} ${addprefix ${DIR_OBJ}/, ${notdir ${OBJS}}}
+	${RM} ${OBJS}
 
 fclean:	clean
 	${RM} ${NAME}
