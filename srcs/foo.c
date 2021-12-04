@@ -1,4 +1,4 @@
-#include	"./../headers/bar.h"
+#include	"bar.h"
 
 void
 	ft_foo(int n)

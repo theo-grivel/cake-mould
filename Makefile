@@ -1,8 +1,9 @@
-SRC_DIR	=	./srcs
-OBJ_DIR	=	./objs
+DIR_SRC	=	./srcs
+DIR_OBJ	=	./objs
+DIR_HEADER	=	./headers/
 
-SRCS	=	${SRC_DIR}/main.c \
-			${SRC_DIR}/foo.c
+SRCS	=	${DIR_SRC}/main.c \
+			${DIR_SRC}/foo.c
 
 OBJS	=	${SRCS:.c=.o}
 
@@ -14,13 +15,13 @@ FLAGS	=	-Wall -Wextra -Werror
 RM		=	rm -f
 
 .c.o:
-	${CC} ${FLAGS} -c $< -o  ${addprefix ${OBJ_DIR}/, ${notdir ${<:.c=.o}}}
+	${CC} ${FLAGS} -I ${DIR_HEADER} -c $< -o  ${addprefix ${DIR_OBJ}/, ${notdir ${<:.c=.o}}}
 
 all:	${OBJS}
-	${CC} ${FLAGS} -o ${NAME} ${addprefix ${OBJ_DIR}/, ${notdir ${OBJS}}}
+	${CC} ${FLAGS} -o ${NAME} ${addprefix ${DIR_OBJ}/, ${notdir ${OBJS}}}
 
 clean:
-	${RM} ${addprefix ${OBJ_DIR}/, ${notdir ${OBJS}}}
+	${RM} ${addprefix ${DIR_OBJ}/, ${notdir ${OBJS}}}
 
 fclean:	clean
 	${RM} ${NAME}

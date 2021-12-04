@@ -1,4 +1,4 @@
-#include	"./../headers/bar.h"
+#include	"bar.h"
 
 int
 	main(void)
