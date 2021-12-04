@@ -44,6 +44,10 @@ headers, srcs and objs. Each folder with different type of file.
     └── main.c
 ```
 
+## Documentation
+
+* [GNU](https://www.gnu.org/software/make/manual/make.html)
+* [Automatic variable](https://www.gnu.org/software/make/manual/make.html#Automatic-Variables)
 
 ## Display ascii tree
 
