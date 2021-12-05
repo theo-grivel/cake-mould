@@ -7,6 +7,8 @@ SRCS	=	${DIR_SRC}/main.c \
 
 OBJS	=	${addprefix ${DIR_OBJ}/, ${notdir ${SRCS:.c=.o}}}
 
+HEADER	=	bar.h
+
 NAME	=	program	
 
 CC		=	gcc
@@ -34,3 +36,8 @@ fclean:	clean
 	${RM} ${NAME}
 
 re:		fclean all
+
+
+norm:
+	norminette ${SRCS}
+	norminette ${HEADER}
