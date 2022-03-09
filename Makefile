@@ -63,3 +63,7 @@ re:		fclean all
 norm:
 	norminette ${SRCS}
 	norminette ${HEADER}
+
+lldb:
+	gcc ${SRCS} -I${DIR_INC} -g -o ${NAME}
+	lldb ${NAME}
