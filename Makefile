@@ -36,7 +36,7 @@ ifeq ($(UNAME_S),Darwin)
 	@echo "It is mac os"
 endif
 
-RM		=	rm -f
+RM		=	rm -rf
 
 vpath %.c ${DIR_SRC}
 
@@ -53,7 +53,7 @@ ${DIR_OBJ} :
 	@mkdir -p ${DIR_OBJ}
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${DIR_OBJ}
 
 fclean:	clean
 	${RM} ${NAME}
